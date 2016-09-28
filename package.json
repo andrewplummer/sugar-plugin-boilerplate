@@ -1,8 +1,8 @@
 {
-  "name": "sugar-sample",
+  "name": "sugar-string-sample",
   "version": "1.0.0",
   "description": "Sample plugin for Sugar.",
-  "main": "sugar-sample.js",
+  "main": "sugar-string-sample.js",
   "repository": {
     "type": "git",
     "url": "<repo>"

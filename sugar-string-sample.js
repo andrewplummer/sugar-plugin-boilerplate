@@ -1,4 +1,5 @@
 /*
+ *  --------------------------------------------
  *  Sugar Plugin Boilerplate (DELETE THIS BLOCK)
  *  --------------------------------------------
  *
@@ -8,6 +9,19 @@
  *  1. Static
  *  2. Chainable
  *  3. Extended Mode
+ *
+ *
+ *  ------
+ *  Naming
+ *  ------
+ *
+ *  Plugins can be named anything, however it is recommended to include "sugar"
+ *  in the name to indicate that it is a Sugar plugin, as well as appear in searches.
+ *  Additionally, adding the targeted native namespace (String, Array, etc) helps to
+ *  give context for when scanning plugin names. This sample is for a one-off single
+ *  method plugin, and so uses "sugar-string-sample" as the plugin name. This can be
+ *  changed to suit your needs, for example if the plugin is a suite of methods that
+ *  belong to different namespaces.
  *
  *
  *  ----------------
@@ -99,23 +113,23 @@
  *
  *  This will result in them being consumed by the same require:
  *
- *  var sample = require('sugar-sample');
+ *  var sample = require('sugar-string-sample');
  *  sample.sample1();
  *  sample.sample2();
  *
  *  Option two is to define them in separate files and create an index.js file
  *  to require them all. This will allow them to be required separately or together:
  *
- *  var sample1 = require('sugar-sample/sample1');
- *  var sample2 = require('sugar-sample/sample2');
+ *  var sample1 = require('sugar-string-sample/method1');
+ *  var sample2 = require('sugar-string-sample/method2');
  *
  *  sample1();
  *  sample2();
  *
  *
- *  var Sugar = require('sugar-sample'); (all methods)
- *  Sugar.String.sample1();
- *  Sugar.String.sample2();
+ *  var Sugar = require('sugar-string-sample'); (all methods)
+ *  Sugar.String.method1();
+ *  Sugar.String.method2();
  *
  *
  *  Which option you choose should depend on how your library is structured. If all
@@ -160,80 +174,80 @@
 
   // --------- (2) Static method example ------------
 
-  Sugar.String.defineStatic({
+  // Sugar.String.defineStatic({
 
-    /***
-     * @method sample(<num>, [opt] = 'optional')
-     * @static
-     * @example
-     *
-     *   String.sample(1) -> 'example!'
-     *
-     ***/
-    'sample': function(num, opt) {
-      // <num> is a required argument, [opt] is optional
-      return num + ' example!';
-    }
+  //   /***
+  //    * @method sample(<num>, [opt] = 'optional')
+  //    * @static
+  //    * @example
+  //    *
+  //    *   String.sample(1) -> 'example!'
+  //    *
+  //    ***/
+  //   'sample': function(num, opt) {
+  //     // <num> is a required argument, [opt] is optional
+  //     return num + ' example!';
+  //   }
 
-  });
+  // });
 
   // --------- (3) Instance method with unlimited arguments ------------
 
-  Sugar.String.defineInstanceWithArguments({
+  // Sugar.String.defineInstanceWithArguments({
 
-    /***
-     * @method sample([args])
-     * @example
-     *
-     *   str.sample('foo', 'bar'); -> 2 args!
-     *
-     ***/
-    'sample': function(str, args) {
-      // <str> refers to the string instance
-      // [args] are collected into an array as the 2nd argument
-      return args.length + ' args!';
-    }
+  //   /***
+  //    * @method sample([args])
+  //    * @example
+  //    *
+  //    *   str.sample('foo', 'bar'); -> 2 args!
+  //    *
+  //    ***/
+  //   'sample': function(str, args) {
+  //     // <str> refers to the string instance
+  //     // [args] are collected into an array as the 2nd argument
+  //     return args.length + ' args!';
+  //   }
 
-  });
+  // });
 
   // --------- (4) Static method with unlimited arguments ------------
 
-  Sugar.String.defineStaticWithArguments({
+  // Sugar.String.defineStaticWithArguments({
 
-    /***
-     * @method sample(<num>, [args])
-     * @static
-     * @example
-     *
-     *   String.sample(2, 'foo', 'bar'); -> 2 args!
-     *
-     ***/
-    'sample': function(num, args) {
-      // <num> is a required argument
-      // [args] are collected into an array as the 2nd argument
-      return args.length + ' args!';
-    }
+  //   /***
+  //    * @method sample(<num>, [args])
+  //    * @static
+  //    * @example
+  //    *
+  //    *   String.sample(2, 'foo', 'bar'); -> 2 args!
+  //    *
+  //    ***/
+  //   'sample': function(num, args) {
+  //     // <num> is a required argument
+  //     // [args] are collected into an array as the 2nd argument
+  //     return args.length + ' args!';
+  //   }
 
-  });
+  // });
 
   // --------- (5) Instance and static method ------------
 
-  Sugar.Object.defineInstanceAndStatic({
+  // Sugar.Object.defineInstanceAndStatic({
 
-    /***
-     * @method sample(<num>, [opt] = 'optional')
-     * @example
-     *
-     *   Object.sample(1) -> 'example!'
-     *
-     ***/
-    'sample': function(str, num) {
-      // <str> refers to the string instance
-      // <num> is a required argument, [opt] is optional
-      return 'example!';
-    }
+  //   /***
+  //    * @method sample(<num>, [opt] = 'optional')
+  //    * @example
+  //    *
+  //    *   Object.sample(1) -> 'example!'
+  //    *
+  //    ***/
+  //   'sample': function(str, num) {
+  //     // <str> refers to the string instance
+  //     // <num> is a required argument, [opt] is optional
+  //     return 'example!';
+  //   }
 
-  });
+  // });
 
   if (hasExports) {
     module.exports = Sugar.String.sample;

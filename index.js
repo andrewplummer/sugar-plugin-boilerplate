@@ -1,8 +1,8 @@
 'use strict';
 
-// Sample plugin entry point. See sugar-sample.js for more details.
+// Sample plugin entry point. See sugar-string-sample.js for more details.
 
-require('./sample1');
-require('./sample2');
+require('./method1');
+require('./method2');
 
 module.exports = require('sugar-core');
