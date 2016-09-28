@@ -141,6 +141,15 @@
  *
  *  See index.js for an example entry point for this method.
  *
+ *  -------
+ *  Testing
+ *  -------
+ *
+ *  Default tests are added here written in Mocha. This is just a sample boilerplate
+ *  to encourage good testing of plugins, and provide example usage. Any framework
+ *  can be substituted here.
+ *
+ *
  */
 (function() {
 
