@@ -1,0 +1,19 @@
+{
+  "name": "sugar-sample",
+  "version": "1.0.0",
+  "description": "Sample plugin for Sugar.",
+  "main": "sugar-sample.js",
+  "repository": {
+    "type": "git",
+    "url": "<repo>"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha"
+  },
+  "author": "<author>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^3.1.0",
+    "sugar-core": "^2.0.0"
+  }
+}
