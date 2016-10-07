@@ -156,7 +156,7 @@
   var hasExports = typeof module !== 'undefined' && module.exports;
 
   if (hasExports) {
-    Sugar = require('sugar-core');
+    var Sugar = require('sugar-core');
   }
 
   // --------- (1) Instance method example ------------
