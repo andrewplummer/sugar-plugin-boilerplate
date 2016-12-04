@@ -1,0 +1,18 @@
+{
+  "name": "sugar-string-sample",
+  "description": "Sample plugin for Sugar.",
+  "license": "MIT",
+  "authors": [
+    "AUTHOR NAME <EMAIL>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<REPO>.git"
+  },
+  "keywords": [
+    "sugar",
+    "plugin",
+    "..."
+  ],
+  "main": "sugar-string-sample.js"
+}

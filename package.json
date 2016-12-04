@@ -5,12 +5,12 @@
   "main": "sugar-string-sample.js",
   "repository": {
     "type": "git",
-    "url": "<repo>"
+    "url": "git+https://github.com/<REPO>.git"
   },
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
   },
-  "author": "<author>",
+  "author": "AUTHOR NAME <EMAIL>",
   "license": "MIT",
   "devDependencies": {
     "mocha": "^3.1.0",
