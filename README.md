@@ -1,8 +1,7 @@
 # Sugar Plugin Boilerplate
 
 This repo provides boilerplate code to write your own Sugar plugin.
-Notes are provided in sugar-string-sample.js Replace this file with
-a readme for your plugin!
+Replace this file with a readme for your plugin!
 
 
 ## Usage
@@ -35,17 +34,23 @@ in the docs [here](https://sugarjs.com/docs/#/Sugar).
 
 Called through the global with the instance as the first argument,
 
-    Sugar.String.sample('foo')
+```javascript
+Sugar.String.sample('foo')
+```
 
 on a chainable prototype,
 
-    var str = new Sugar.String('foo');
-    foo.sample();
+```javascript
+var str = new Sugar.String('foo');
+foo.sample();
+```
 
 
 or directly on native prototypes in extended mode.
 
- 'foo'.sample();
+```javascript
+'foo'.sample();
+```
 
 Note that Object instance methods require special handling (see below).
 
@@ -54,11 +59,15 @@ Note that Object instance methods require special handling (see below).
 
 Called through the global,
 
-    Sugar.String.sample();
+```javascript
+Sugar.String.sample();
+```
 
 or directly on the native object in extended mode.
 
-    String.sample();
+```javascript
+String.sample();
+```
 
 
 ### Instance Methods With Arguments
@@ -86,48 +95,58 @@ to the `Object` global so that they can be safely used without going through
 `Object.prototype`. This will effectively make the method callable in the
 following 3 ways:
 
-    Sugar.Object.sample(obj);
+```javascript
+Sugar.Object.sample(obj);
 
-    var obj = Sugar.Object(obj);
-    obj.sample();
+var obj = Sugar.Object(obj);
+obj.sample();
 
-    Object.sample(obj); // Extended Mode
+Object.sample(obj); // Extended Mode
+```
 
 
 ## Exporting Methods
 
 When creating a single, one-off method, simply export it using:
 
-    module.exports = Sugar.String.sample;
+```javascript
+module.exports = Sugar.String.sample;
+```
 
 When creating a suite of methods, there are two options. Which to choose
 depends on how you want your methods to be consumed. The first option
 is to define all methods here and export them all with:
 
-    module.exports = {
-      sample1: Sugar.String.sample1,
-      sample2: Sugar.String.sample2
-    }
+```javascript
+module.exports = {
+  sample1: Sugar.String.sample1,
+  sample2: Sugar.String.sample2
+}
+```
 
 This will result in them being consumed by the same require:
 
-    var sample = require('sugar-string-sample');
-    sample.sample1();
-    sample.sample2();
+```javascript
+var sample = require('sugar-string-sample');
+sample.sample1();
+sample.sample2();
+```
 
 Option two is to define them in separate files and create an index.js file
 to require them all. This will allow them to be required separately or together:
 
-    var sample1 = require('sugar-string-sample/method1');
-    var sample2 = require('sugar-string-sample/method2');
+```javascript
+var sample1 = require('sugar-string-sample/method1');
+var sample2 = require('sugar-string-sample/method2');
 
-    sample1();
-    sample2();
+sample1();
+sample2();
 
 
-    var Sugar = require('sugar-string-sample'); (all methods)
-    Sugar.String.method1();
-    Sugar.String.method2();
+var Sugar = require('sugar-string-sample'); (all methods)
+Sugar.String.method1();
+Sugar.String.method2();
+```
 
 
 Which option you choose should depend on how your library is structured. If all
