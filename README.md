@@ -32,7 +32,8 @@ in the docs [here](https://sugarjs.com/docs/#/Sugar).
 
 ### Instance Methods
 
-Called through the global with the instance as the first argument,
+`defineInstance` will create instance methods that are called through the global
+with the instance as the first argument,
 
 ```javascript
 Sugar.String.sample('foo')
@@ -57,7 +58,7 @@ Note that Object instance methods require special handling (see below).
 
 ### Static Methods
 
-Called through the global,
+`defineStatic` will create static methods that are called through the global,
 
 ```javascript
 Sugar.String.sample();
@@ -72,17 +73,18 @@ String.sample();
 
 ### Instance Methods With Arguments
 
-Same as instance methods but accept unlimited arguments. Method definition must
-name at least two arguments, the first being the instance itself. The last named
-argument will be an array of all arguments collected beyond the function's
-length.
+`defineInstanceWithArguments` works the same as `defineInstance`, however allows
+methods to accept unlimited arguments. Method definition must name at least two
+arguments, the first being the instance itself. The last named argument will be
+an array of all arguments collected beyond the function's length.
 
 
 ### Static Methods With Arguments
 
-Same as static methods but accepts unlimited arguments. Method definition must
-name at least one argument. The last named argument will be an array of all
-arguments collected beyond the function's length.
+`defineStaticWithArguments` works the same as `defineStatic`, however allows
+methods to accept unlimited arguments. Method definition must name at least one
+argument. The last named argument will be an array of all arguments collected
+beyond the function's length.
 
 
 ### Object Instance Methods
@@ -156,7 +158,7 @@ be consumed separately, using the second option is a bit more user friendly,
 especially if the user is using a package manager like Browserify, as they can
 choose to add only individually required methods to their build.
 
-See index.js for an example entry point for this method.
+See [index.js](index.js) for an example entry point for this method.
 
 
 ## Testing
